@@ -1,0 +1,43 @@
+using System;
+
+// Bir "Person" struct tanımı
+struct Person
+{
+    public string Name;
+    public int Health;
+    public int Power;
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Person person;
+        char exitChoice = 'n';
+
+        while (exitChoice != 'y' && exitChoice != 'Y')
+        {
+            // Kullanıcıdan veri girişi alma
+            Console.Write("Karakter Adı: ");
+            person.Name = Console.ReadLine();
+
+            Console.Write("Saglik: ");
+            person.Health = int.Parse(Console.ReadLine());
+
+            Console.Write("Guc: ");
+            person.Power = int.Parse(Console.ReadLine());
+
+
+
+            // Depolanan verileri gösterme
+            Console.WriteLine("İsim: " + person.Name);
+            Console.WriteLine("Saglik: " + person.Health);
+            Console.WriteLine("Guc: " + person.Power);
+            
+
+            Console.Write("Çıkış yapmak istiyor musunuz? (y/n): ");
+            exitChoice = Console.ReadKey().KeyChar;
+            Console.WriteLine();
+        }
+    }
+}
